@@ -1,0 +1,5 @@
+project: uuid
+target: fuzz_target_parse
+
+cmds:
+  - cmd: /fuzz_target_parse
