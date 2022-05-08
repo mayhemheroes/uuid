@@ -55,13 +55,6 @@ jobs:
           args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.FUZZ_TARGET_PARSE }} --duration 300
           sarif-output: sarif
 
-      - name: Start text_parser analysis
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }} --file ${{ env.TEXT_PARSER }} --duration 300
-          sarif-output: sarif
-
       - name: Upload SARIF file(s)
         uses: github/codeql-action/upload-sarif@v1
         with:
